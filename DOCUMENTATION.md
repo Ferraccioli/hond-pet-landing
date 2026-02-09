@@ -42,3 +42,5 @@
 - Alteração do texto de "Baixar App" para "Entrar na waitlist".
 - Redirecionamento configurado para a página de Contato (`/contact`).
 - Adicionadas sombras (`shadow-2xl`) às imagens da seção Missão conforme última edição manual do usuário.
+### PROMPT [10]: Refatoração de Botão (Experience Section)
+- Substituição da tag `<a>` bruta pelo componente `Button` da UI e `Link` do react-router-dom para consistência visual e de navegação.
