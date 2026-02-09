@@ -38,3 +38,7 @@
 - Refatoração completa conforme Figma: Gap de 80px, texto atualizado e imagens com `object-cover`.
 - Ajuste final de dimensões das imagens para 320x320px com `rounded-[24px]`.
 
+### PROMPT [9]: Atualização do CTA do Header
+- Alteração do texto de "Baixar App" para "Entrar na waitlist".
+- Redirecionamento configurado para a página de Contato (`/contact`).
+- Adicionadas sombras (`shadow-2xl`) às imagens da seção Missão conforme última edição manual do usuário.
