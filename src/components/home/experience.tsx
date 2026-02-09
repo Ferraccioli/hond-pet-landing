@@ -1,6 +1,8 @@
 import { Star, Utensils, Map } from "lucide-react";
+import { Link } from "react-router-dom";
 import mockPhones from "../../assets/mock-celulares.png";
 import { FadeIn } from "../ui/fade-in";
+import { Button } from "../ui/button";
 
 const experienceFeatures = [
     {
@@ -55,12 +57,11 @@ export function ExperienceSection() {
                         </div>
 
                         <FadeIn direction="up" delay={0.8} className="pt-4">
-                            <a
-                                href="/about"
-                                className="inline-block bg-primary hover:bg-primary/90 text-white font-bold font-sans py-4 px-10 rounded-3xl transition-colors shadow-lg shadow-primary/25"
-                            >
-                                Saiba mais
-                            </a>
+                            <Link to="/about">
+                                <Button size="lg" className="font-bold shadow-lg shadow-primary/25">
+                                    Saiba mais
+                                </Button>
+                            </Link>
                         </FadeIn>
                     </div>
 
