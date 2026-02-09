@@ -55,9 +55,12 @@ export function ExperienceSection() {
                         </div>
 
                         <FadeIn direction="up" delay={0.8} className="pt-4">
-                            <button className="bg-primary hover:bg-primary/90 text-white font-bold font-sans py-4 px-10 rounded-3xl transition-colors shadow-lg shadow-primary/25">
+                            <a
+                                href="/about"
+                                className="inline-block bg-primary hover:bg-primary/90 text-white font-bold font-sans py-4 px-10 rounded-3xl transition-colors shadow-lg shadow-primary/25"
+                            >
                                 Saiba mais
-                            </button>
+                            </a>
                         </FadeIn>
                     </div>
 

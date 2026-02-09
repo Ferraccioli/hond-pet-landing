@@ -20,24 +20,24 @@ export function AboutMission() {
     return (
         <section className="py-24 bg-slate-50">
             <div className="max-w-[1280px] mx-auto px-6">
-                <div className="flex flex-col lg:flex-row items-center gap-16">
+                <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
 
-                    <div className="flex-1 space-y-10 order-2">
+                    <div className="flex-1 order-2 lg:max-w-[592px]">
                         <FadeIn direction="left" delay={0.2}>
-                            <div className="grid grid-cols-2 gap-4">
-                                <img src={dogWalk} alt="Dog Walk" className="w-auto h-[320px] object-contain rounded-[32px]" />
-                                <img src={petResting} alt="Pet Resting" className="w-auto h-[320px] object-contain rounded-[32px] mt-12" />
+                            <div className="grid grid-cols-2 gap-4 w-fit lg:ml-auto">
+                                <img src={dogWalk} alt="Dog Walk" className="w-[320px] h-[320px] object-cover rounded-[24px]" />
+                                <img src={petResting} alt="Pet Resting" className="w-[320px] h-[320px] object-cover rounded-[24px]" />
                             </div>
                         </FadeIn>
                     </div>
 
-                    <div className="flex-1 order-1 lg:order-1 space-y-8">
+                    <div className="flex-1 order-1 lg:order-1 space-y-8 lg:max-w-[560px]">
                         <FadeIn direction="right">
                             <h3 className="text-4xl font-heading font-semibold text-slate-900 mb-4">
                                 Nossa Missão
                             </h3>
                             <p className="text-lg text-slate-600 font-sans">
-                                Prover soluções tecnológicas e gastronômicas que permitam aos tutores de pets explorarem a cidade com confiança.
+                                Prover soluções tecnológicas e gastronômicas que permitam aos tutores de pets explorarem a cidade com confiança e segurança, fomentando uma comunidade unida.
                             </p>
                         </FadeIn>
 
