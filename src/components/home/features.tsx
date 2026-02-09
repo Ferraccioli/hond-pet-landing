@@ -1,5 +1,5 @@
 import { FadeIn } from "../ui/fade-in";
-import Pin from "../../assets/gps.png";
+import Pin from "../../assets/GPS.png";
 import Book from "../../assets/book.png";
 import Paw from "../../assets/paw.png";
 
