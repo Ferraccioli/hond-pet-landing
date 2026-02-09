@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import dogEating from "../../assets/dog-eating.png";
 
 interface MenuItemProps {
@@ -10,21 +11,27 @@ function MenuItem({ title, description, align = 'left' }: MenuItemProps) {
     const isRight = align === 'right';
 
     return (
-        <div className={`flex gap-6 max-w-[576px] mx-auto lg:max-w-none lg:mx-0 ${isRight ? 'lg:flex-row-reverse lg:text-right flex-row text-left' : 'flex-row text-left'}`}>
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className={`flex gap-6 max-w-[400px] mx-auto lg:max-w-none lg:mx-0 ${isRight ? 'lg:flex-row-reverse lg:text-right flex-row text-left' : 'flex-row text-left'}`}
+        >
             <div className="flex-shrink-0 pt-1">
                 <div className="w-5 h-5 rounded-full bg-primary/15 flex items-center justify-center">
                     <div className="w-2 h-2 rounded-full bg-primary/60" />
                 </div>
             </div>
             <div className="space-y-2">
-                <h3 className="text-xl w-full font-heading font-semibold text-slate-900 leading-tight">
+                <h3 className="text-xl font-heading font-semibold text-slate-900 leading-tight">
                     {title}
                 </h3>
-                <p className={`text-muted w-full leading-relaxed ${isRight ? 'lg:ml-auto' : ''}`}>
+                <p className={`text-muted leading-relaxed max-w-[334px] ${isRight ? 'lg:ml-auto' : ''}`}>
                     {description}
                 </p>
             </div>
-        </div>
+        </motion.div>
     );
 }
 
@@ -32,7 +39,13 @@ export function PetMenu() {
     return (
         <section className="bg-background py-32 px-6">
             <div className="max-w-[1280px] mx-auto">
-                <div className="text-center space-y-4 mb-20">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="text-center space-y-4 mb-20"
+                >
                     <span className="text-primary font-bold tracking-widest uppercase text-sm">
                         PET MENU
                     </span>
@@ -42,7 +55,7 @@ export function PetMenu() {
                     <p className="text-lg text-muted max-w-2xl mx-auto leading-relaxed">
                         Snacks exclusivos formulados por especialistas para que seu pet tenha uma experiência gourmet em qualquer lugar.
                     </p>
-                </div>
+                </motion.div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 items-center">
                     {/* Coluna Esquerda */}
@@ -58,7 +71,13 @@ export function PetMenu() {
                     </div>
 
                     {/* Imagem Central */}
-                    <div className="relative order-1 lg:order-2 flex justify-center">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="relative order-1 lg:order-2 flex justify-center"
+                    >
                         <div className="bg-white/0 border-[12px] border-background rounded-[40px] p-3 shadow-2xl max-w-full">
                             <img
                                 src={dogEating}
@@ -66,7 +85,7 @@ export function PetMenu() {
                                 className="w-[357px] h-[357px] object-cover rounded-[32px]"
                             />
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Coluna Direita */}
                     <div className="space-y-12 order-3">

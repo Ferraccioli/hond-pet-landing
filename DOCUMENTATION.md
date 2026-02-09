@@ -58,3 +58,4 @@
 - Implementação da seção **Viagens**: layout em 2 colunas com lista de benefícios e imagem com efeito decorativo de blur.
 - Imagens otimizadas com `object-cover` e arredondamentos de `40px` conforme Figma.
 - Cores e tipografia seguindo rigorosamente o design system (`primary`, `dark`, `muted`).
+- **Animações de entrada**: Adição de `framer-motion` nas seções Pet Menu e Viagens (fade-in, slide-up e scale) para melhorar a interatividade com o scroll (`whileInView`).

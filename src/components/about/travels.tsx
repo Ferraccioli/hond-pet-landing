@@ -1,13 +1,21 @@
+import { motion } from "framer-motion";
 import dogTravel from "../../assets/dog-travel.png";
 
 interface TravelItemProps {
     title: string;
     description: string;
+    index: number;
 }
 
-function TravelItem({ title, description }: TravelItemProps) {
+function TravelItem({ title, description, index }: TravelItemProps) {
     return (
-        <div className="flex gap-4 items-start">
+        <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="flex gap-4 items-start"
+        >
             <div className="flex-shrink-0 pt-1">
                 <div className="w-5 h-5 rounded-full bg-primary/15 flex items-center justify-center">
                     <div className="w-2 h-2 rounded-full bg-primary/60" />
@@ -21,7 +29,7 @@ function TravelItem({ title, description }: TravelItemProps) {
                     {description}
                 </p>
             </div>
-        </div>
+        </motion.div>
     );
 }
 
@@ -32,7 +40,13 @@ export function Travels() {
                 <div className="flex flex-col lg:flex-row items-center gap-20">
                     {/* Conteúdo Esquerdo */}
                     <div className="flex-1 space-y-8">
-                        <div className="space-y-4">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5 }}
+                            className="space-y-4"
+                        >
                             <span className="text-primary font-bold tracking-widest uppercase text-sm">
                                 VIAGENS
                             </span>
@@ -42,18 +56,21 @@ export function Travels() {
                             <p className="text-lg text-slate-600 leading-relaxed max-w-xl">
                                 Descubra restaurantes, hotéis e entretenimentos onde todos são bem-vindos! Toda vez, uma nova possibilidade.
                             </p>
-                        </div>
+                        </motion.div>
 
                         <div className="space-y-6 pt-2">
                             <TravelItem
+                                index={0}
                                 title="Completo"
                                 description="Encontre tudo que precisa durante a sua viagem e deixe salvo. Não gaste tempo pensando aonde ir, saiba exatamente o que espera por vocês."
                             />
                             <TravelItem
+                                index={1}
                                 title="Confiável"
                                 description="Conte com a avaliação de outros cãopanheiros, e deixe a sua também. Ajude outros pets a desfrutarem de mais experiências incríveis!"
                             />
                             <TravelItem
+                                index={2}
                                 title="Contínuo"
                                 description="Todo dia surge uma nova forma de viver com o seu cãopanheiro. Os mesmos destinos podem trazer novas experiências, não deixe de explorar!"
                             />
@@ -61,7 +78,13 @@ export function Travels() {
                     </div>
 
                     {/* Imagem Direita */}
-                    <div className="flex-1 relative">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="flex-1 relative"
+                    >
                         {/* Efeito de Blur atrás da imagem */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/5 blur-[32px] rounded-full -z-10" />
 
@@ -72,7 +95,7 @@ export function Travels() {
                                 className="w-full aspect-square object-cover"
                             />
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
