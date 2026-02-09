@@ -1,10 +1,12 @@
 import { Button } from "../ui/button";
+import { useModal } from "../../context/modal-context";
 import heroDog from "../../assets/hero-dog.png";
 import panela from "../../assets/panela.png";
 import pata from "../../assets/pata.svg";
 import { FadeIn } from "../ui/fade-in";
 
 export function Hero() {
+    const { openWaitlist } = useModal();
     return (
         <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-gradient-to-r from-background to-white">
             <div className="max-w-[1280px] mx-auto px-6">
@@ -26,7 +28,12 @@ export function Hero() {
                         </FadeIn>
 
                         <FadeIn direction="right" delay={0.4} className="pt-4">
-                            <Button size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-white text-lg h-16 px-10 rounded-3xl">
+                            <Button
+                                onClick={openWaitlist}
+                                size="lg"
+                                variant="outline"
+                                className="border-2 border-primary text-primary hover:bg-primary hover:text-white text-lg h-16 px-10 rounded-3xl"
+                            >
                                 Conhecer o App
                             </Button>
                         </FadeIn>

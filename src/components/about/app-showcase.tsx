@@ -5,7 +5,7 @@ import { FadeIn } from "../ui/fade-in";
 const appFeatures = [
     {
         icon: Brain,
-        title: "Quizes Comportamentais",
+        title: "Quizes",
         description: "Entenda o perfil comportamental do seu pet.",
     },
     {

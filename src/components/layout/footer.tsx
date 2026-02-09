@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useModal } from "../../context/modal-context";
 import logo from "../../assets/logo.svg";
 // Import social icons if available, else usage placeholders or Lucide
 import facebook from "../../assets/facebook.svg";
@@ -9,6 +10,7 @@ import apple from "../../assets/apple.svg";
 import googlePlay from "../../assets/google-play.svg";
 
 export function Footer() {
+    const { openWaitlist } = useModal();
     return (
         <footer className="bg-dark text-white pt-16 pb-16 border-t border-slate-100">
             <div className="max-w-[1280px] mx-auto px-6">
@@ -53,7 +55,7 @@ export function Footer() {
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="font-heading font-semibold text-lg mb-6">Links Rápidos</h4>
+                        <h4 className="font-heading font-semibold text-white text-lg mb-6">Links Rápidos</h4>
                         <ul className="space-y-4 font-sans text-slate-300">
                             <li><Link to="/about" className="hover:text-white transition-colors">Sobre Nós</Link></li>
                             <li><Link to="#" className="hover:text-white transition-colors">Pet Menu</Link></li>
@@ -64,22 +66,28 @@ export function Footer() {
 
                     {/* Download App */}
                     <div>
-                        <h4 className="font-heading font-semibold text-lg mb-6">Baixe o App</h4>
+                        <h4 className="font-heading font-semibold text-white text-lg mb-6">Baixe o App</h4>
                         <div className="space-y-4">
-                            <a href="#" className="bg-white text-dark p-3 rounded-full flex items-center gap-3 w-fit hover:bg-slate-100 transition-colors">
+                            <button
+                                onClick={(e) => { e.preventDefault(); openWaitlist(); }}
+                                className="bg-white text-slate-900 p-3 rounded-full flex items-center gap-3 w-full hover:bg-slate-100 transition-colors"
+                            >
                                 <img src={apple} alt="Apple" className="w-7 h-7" />
-                                <div className="flex flex-col leading-none">
+                                <div className="flex flex-col leading-none text-left">
                                     <span className="text-[10px] uppercase font-sans">Baixar na</span>
                                     <span className="font-bold font-sans text-base">App Store</span>
                                 </div>
-                            </a>
-                            <a href="#" className="bg-white text-dark p-3 rounded-full flex items-center gap-3 w-fit hover:bg-slate-100 transition-colors">
+                            </button>
+                            <button
+                                onClick={(e) => { e.preventDefault(); openWaitlist(); }}
+                                className="bg-white text-slate-900 p-3 rounded-full flex items-center gap-3 w-full hover:bg-slate-100 transition-colors"
+                            >
                                 <img src={googlePlay} alt="Google Play" className="w-7 h-7" />
-                                <div className="flex flex-col leading-none">
+                                <div className="flex flex-col leading-none text-left">
                                     <span className="text-[10px] uppercase font-sans">Baixar na</span>
                                     <span className="font-bold font-sans text-base">Google Play</span>
                                 </div>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>

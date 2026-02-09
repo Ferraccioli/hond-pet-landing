@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../ui/button";
+import { useModal } from "../../context/modal-context";
 import logo from "../../assets/logo.svg";
 
 export function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { openWaitlist } = useModal();
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -51,11 +53,12 @@ export function Header() {
 
                 {/* CTA & Mobile Toggle */}
                 <div className="flex items-center gap-4 z-50">
-                    <Link to="/contact">
-                        <Button className="hidden md:inline-flex bg-primary hover:bg-primary/90 rounded-full shadow-lg shadow-primary/20">
-                            Entrar na waitlist
-                        </Button>
-                    </Link>
+                    <Button
+                        onClick={openWaitlist}
+                        className="hidden md:inline-flex bg-primary hover:bg-primary/90 rounded-full shadow-lg shadow-primary/20"
+                    >
+                        Baixar App
+                    </Button>
 
                     <button
                         className="p-2 text-slate-900 md:hidden outline-none"
@@ -102,11 +105,15 @@ export function Header() {
                             transition={{ delay: 0.4 }}
                             className="pt-8 border-t border-slate-100"
                         >
-                            <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                                <Button className="w-full h-16 text-lg bg-primary hover:bg-primary/90 rounded-2xl shadow-lg shadow-primary/20">
-                                    Entrar na waitlist
-                                </Button>
-                            </Link>
+                            <Button
+                                onClick={() => {
+                                    setIsMenuOpen(false);
+                                    openWaitlist();
+                                }}
+                                className="w-full h-16 text-lg bg-primary hover:bg-primary/90 rounded-2xl shadow-lg shadow-primary/20"
+                            >
+                                Baixar App
+                            </Button>
                         </motion.div>
                     </motion.div>
                 )}
