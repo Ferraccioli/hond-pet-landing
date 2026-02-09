@@ -35,3 +35,6 @@
 ### PROMPT [8]: Ajustes na Seção Missão
 - Inversão do layout: Imagens para a direita, Texto para a esquerda.
 - Ajuste das direções das animações de FadeIn.
+- Refatoração completa conforme Figma: Gap de 80px, texto atualizado e imagens com `object-cover`.
+- Ajuste final de dimensões das imagens para 320x320px com `rounded-[24px]`.
+
