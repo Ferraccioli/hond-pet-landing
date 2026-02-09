@@ -64,3 +64,4 @@
 - Atualização do componente `Footer` para conectar os "Links Rápidos" às suas respectivas páginas e seções.
 - Seções **Pet Menu** (`#pet-menu`) e **Viagens** (`#viagens`) agora possuem IDs e são acessíveis via hash links na página Sobre.
 - O link "Seja um Parceiro" foi conectado à página de Contato (`/contact`).
+- **Suporte a Hash Scroll**: Atualização do componente `ScrollToTop` para detectar hashes na URL e realizar o scroll automático suave (`scrollIntoView`) até a seção correspondente, garantindo que links do Footer funcionem corretamente entre páginas.
