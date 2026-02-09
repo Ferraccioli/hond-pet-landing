@@ -1,4 +1,4 @@
-import { Brain, Trophy, Map } from "lucide-react";
+import { Brain, Trophy, Map, Plane } from "lucide-react";
 import mockApp from "../../assets/mock-celulares.png"; // Reuse existing mock or similar
 import { FadeIn } from "../ui/fade-in";
 
@@ -17,6 +17,11 @@ const appFeatures = [
         icon: Map,
         title: "Guia Local",
         description: "Encontre os melhores lugares pet friendly.",
+    },
+    {
+        icon: Plane,
+        title: "Viagens",
+        description: "Hotéis e paradas verificadas pela comunidade.",
     },
 ];
 
@@ -37,7 +42,7 @@ export function AboutAppShowcase() {
                     <div className="flex-1 space-y-10">
                         <FadeIn direction="left" delay={0.2}>
                             <div>
-                                <h2 className="text-sm font-bold tracking-widest text-secondary uppercase mb-2">O APLICATIVO</h2>
+                                <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-2">O APLICATIVO</h2>
                                 <h3 className="text-4xl font-heading font-semibold text-slate-900 mb-4">
                                     O seu guia pet-friendly na palma da mão.
                                 </h3>
