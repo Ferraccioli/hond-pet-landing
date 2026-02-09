@@ -59,3 +59,8 @@
 - Imagens otimizadas com `object-cover` e arredondamentos de `40px` conforme Figma.
 - Cores e tipografia seguindo rigorosamente o design system (`primary`, `dark`, `muted`).
 - **Animações de entrada**: Adição de `framer-motion` nas seções Pet Menu e Viagens (fade-in, slide-up e scale) para melhorar a interatividade com o scroll (`whileInView`).
+
+### PROMPT [14]: Conexão de Links do Footer
+- Atualização do componente `Footer` para conectar os "Links Rápidos" às suas respectivas páginas e seções.
+- Seções **Pet Menu** (`#pet-menu`) e **Viagens** (`#viagens`) agora possuem IDs e são acessíveis via hash links na página Sobre.
+- O link "Seja um Parceiro" foi conectado à página de Contato (`/contact`).

@@ -35,7 +35,7 @@ function TravelItem({ title, description, index }: TravelItemProps) {
 
 export function Travels() {
     return (
-        <section className="py-32 px-6 relative overflow-hidden">
+        <section id="viagens" className="py-32 px-6 relative overflow-hidden">
             <div className="max-w-[1280px] mx-auto">
                 <div className="flex flex-col lg:flex-row items-center gap-20">
                     {/* Conteúdo Esquerdo */}

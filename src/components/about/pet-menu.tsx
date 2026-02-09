@@ -37,7 +37,7 @@ function MenuItem({ title, description, align = 'left' }: MenuItemProps) {
 
 export function PetMenu() {
     return (
-        <section className="bg-background py-32 px-6">
+        <section id="pet-menu" className="bg-background py-32 px-6">
             <div className="max-w-[1280px] mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

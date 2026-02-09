@@ -58,9 +58,9 @@ export function Footer() {
                         <h4 className="font-heading font-semibold text-white text-lg mb-6">Links Rápidos</h4>
                         <ul className="space-y-4 font-sans text-slate-300">
                             <li><Link to="/about" className="hover:text-white transition-colors">Sobre Nós</Link></li>
-                            <li><Link to="#" className="hover:text-white transition-colors">Pet Menu</Link></li>
-                            <li><Link to="#" className="hover:text-white transition-colors">Viagens</Link></li>
-                            <li><Link to="#" className="hover:text-white transition-colors">Seja um Parceiro</Link></li>
+                            <li><Link to="/about#pet-menu" className="hover:text-white transition-colors">Pet Menu</Link></li>
+                            <li><Link to="/about#viagens" className="hover:text-white transition-colors">Viagens</Link></li>
+                            <li><Link to="/contact" className="hover:text-white transition-colors">Seja um Parceiro</Link></li>
                         </ul>
                     </div>
 
