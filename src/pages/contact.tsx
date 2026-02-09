@@ -19,7 +19,7 @@ export default function ContactPage() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+                <div className="grid grid-cols-1 gap-16 items-start">
                     <ContactForm />
                     <PartnersSection />
                 </div>
