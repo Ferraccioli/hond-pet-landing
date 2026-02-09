@@ -25,8 +25,8 @@ export function AboutMission() {
                     <div className="flex-1 order-2 lg:max-w-[592px]">
                         <FadeIn direction="left" delay={0.2}>
                             <div className="grid grid-cols-2 gap-4 w-fit lg:ml-auto">
-                                <img src={dogWalk} alt="Dog Walk" className="w-[320px] h-[320px] object-cover rounded-[24px]" />
-                                <img src={petResting} alt="Pet Resting" className="w-[320px] h-[320px] object-cover rounded-[24px]" />
+                                <img src={dogWalk} alt="Dog Walk" className="w-[320px] h-[320px] object-cover rounded-[24px] shadow-2xl" />
+                                <img src={petResting} alt="Pet Resting" className="w-[320px] h-[320px] object-cover rounded-[24px] mt-12 shadow-2xl" />
                             </div>
                         </FadeIn>
                     </div>

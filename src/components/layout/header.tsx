@@ -51,9 +51,11 @@ export function Header() {
 
                 {/* CTA & Mobile Toggle */}
                 <div className="flex items-center gap-4 z-50">
-                    <Button className="hidden md:inline-flex bg-primary hover:bg-primary/90 rounded-full shadow-lg shadow-primary/20">
-                        Baixar App
-                    </Button>
+                    <Link to="/contact">
+                        <Button className="hidden md:inline-flex bg-primary hover:bg-primary/90 rounded-full shadow-lg shadow-primary/20">
+                            Entrar na waitlist
+                        </Button>
+                    </Link>
 
                     <button
                         className="p-2 text-slate-900 md:hidden outline-none"
@@ -100,9 +102,11 @@ export function Header() {
                             transition={{ delay: 0.4 }}
                             className="pt-8 border-t border-slate-100"
                         >
-                            <Button className="w-full h-16 text-lg bg-primary hover:bg-primary/90 rounded-2xl shadow-lg shadow-primary/20">
-                                Baixar App
-                            </Button>
+                            <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+                                <Button className="w-full h-16 text-lg bg-primary hover:bg-primary/90 rounded-2xl shadow-lg shadow-primary/20">
+                                    Entrar na waitlist
+                                </Button>
+                            </Link>
                         </motion.div>
                     </motion.div>
                 )}
