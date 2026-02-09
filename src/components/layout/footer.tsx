@@ -12,9 +12,9 @@ export function Footer() {
     return (
         <footer className="bg-dark text-white pt-16 pb-16 border-t border-slate-100">
             <div className="max-w-[1280px] mx-auto px-6">
-                <div className="flex justify-between gap-16 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12 mb-16">
                     {/* Brand Column */}
-                    <div className="space-y-4">
+                    <div className="lg:col-span-2 space-y-4">
                         <div
                             className="w-[68px] h-[44px] bg-white"
                             style={{
@@ -31,7 +31,7 @@ export function Footer() {
                         <div className="font-heading font-semibold text-lg">
                             Conectando tutores a lugares incríveis.
                         </div>
-                        <p className="text-slate-400 font-sans">
+                        <p className="text-slate-400 font-sans max-w-sm">
                             Nossa missão é tornar a vida urbana mais amigável para você e seu melhor amigo.
                         </p>
 
@@ -52,7 +52,7 @@ export function Footer() {
                     </div>
 
                     {/* Quick Links */}
-                    <div className="col-span-1 md:col-span-1">
+                    <div>
                         <h4 className="font-heading font-semibold text-lg mb-6">Links Rápidos</h4>
                         <ul className="space-y-4 font-sans text-slate-300">
                             <li><Link to="/about" className="hover:text-white transition-colors">Sobre Nós</Link></li>
@@ -63,7 +63,7 @@ export function Footer() {
                     </div>
 
                     {/* Download App */}
-                    <div className="col-span-1 md:col-span-1">
+                    <div>
                         <h4 className="font-heading font-semibold text-lg mb-6">Baixe o App</h4>
                         <div className="space-y-4">
                             <a href="#" className="bg-white text-dark p-3 rounded-full flex items-center gap-3 w-fit hover:bg-slate-100 transition-colors">
