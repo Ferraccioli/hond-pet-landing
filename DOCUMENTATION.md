@@ -51,3 +51,10 @@
 - Design fiel ao Figma (Node `20:542`) com overlay escurecido, animações de entrada/saída (`framer-motion`) e data de lançamento (2 de abril de 2026).
 - Todos os botões "Baixar App" (Header, Hero, CTASection e Footer) agora disparam este modal.
 - O botão interno do modal redireciona para a página de Contato.
+
+### PROMPT [12]: Seções Pet Menu e Viagens (Página Sobre)
+- Implementação da seção **Pet Menu**: layout em 3 colunas (desktop) com imagem centralizada e itens de menu com alinhamento lateral alternado.
+- Responsividade: Em mobile, os itens do Pet Menu são centralizados na tela (mx-auto) com texto alinhados à esquerda.
+- Implementação da seção **Viagens**: layout em 2 colunas com lista de benefícios e imagem com efeito decorativo de blur.
+- Imagens otimizadas com `object-cover` e arredondamentos de `40px` conforme Figma.
+- Cores e tipografia seguindo rigorosamente o design system (`primary`, `dark`, `muted`).
