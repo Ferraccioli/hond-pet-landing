@@ -44,3 +44,10 @@
 - Adicionadas sombras (`shadow-2xl`) às imagens da seção Missão conforme última edição manual do usuário.
 ### PROMPT [10]: Refatoração de Botão (Experience Section)
 - Substituição da tag `<a>` bruta pelo componente `Button` da UI e `Link` do react-router-dom para consistência visual e de navegação.
+
+### PROMPT [11]: Modal de Waitlist
+
+- Implementação de um modal global (via Context API) para anúncio de lançamento do app.
+- Design fiel ao Figma (Node `20:542`) com overlay escurecido, animações de entrada/saída (`framer-motion`) e data de lançamento (2 de abril de 2026).
+- Todos os botões "Baixar App" (Header, Hero, CTASection e Footer) agora disparam este modal.
+- O botão interno do modal redireciona para a página de Contato.
