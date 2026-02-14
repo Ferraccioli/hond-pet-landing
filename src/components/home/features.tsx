@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import gps from "../../assets/GPS.png"; // Ensure exact casing
 import book from "../../assets/book.png";
 import paw from "../../assets/paw.png";
@@ -6,7 +6,7 @@ import pata from "../../assets/features-pata.png";
 import ossos from "../../assets/features-ossos.png";
 import bolinhas from "../../assets/features-bolinhas.png";
 
-const containerVariants = {
+const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,
@@ -16,7 +16,7 @@ const containerVariants = {
     }
 }
 
-const cardVariants = {
+const cardVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
 }
