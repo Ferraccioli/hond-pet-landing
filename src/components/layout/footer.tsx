@@ -12,7 +12,7 @@ import googlePlay from "../../assets/google-play.svg";
 export function Footer() {
     const { openWaitlist } = useModal();
     return (
-        <footer className="bg-dark text-white pt-16 pb-16 border-t border-slate-100">
+        <footer className="bg-dark text-white pt-16 pb-16 border-t border-slate-100 snap-start">
             <div className="max-w-[1280px] mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12 mb-16">
                     {/* Brand Column */}

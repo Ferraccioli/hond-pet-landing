@@ -5,10 +5,12 @@ import HomePage from './pages/home'
 import AboutPage from './pages/about'
 import ContactPage from './pages/contact'
 import ScrollToTop from './components/layout/scroll-to-top'
+import SmoothScroll from './components/layout/smooth-scroll'
 
 function App() {
   return (
     <BrowserRouter>
+      <SmoothScroll />
       <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>

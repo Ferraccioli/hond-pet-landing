@@ -57,16 +57,16 @@ export function ContactForm() {
     }
 
     return (
-        <div className="bg-white/70 backdrop-blur-md border border-white/20 rounded-[32px] p-8 lg:p-12 shadow-xl">
+        <div className="bg-[#0ca4a5] border border-white/20 rounded-[32px] p-8 lg:p-12 shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)] backdrop-blur-md">
             <div className="flex items-center gap-3 mb-8">
-                <Send className="w-6 h-6 text-primary rotate-[-45deg]" />
-                <h2 className="text-2xl font-heading font-semibold text-slate-800">Envie uma mensagem</h2>
+                <Send className="w-6 h-6 text-white rotate-[-45deg]" />
+                <h2 className="text-2xl font-heading font-semibold text-white">Envie uma mensagem</h2>
             </div>
 
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
 
                 <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-500 uppercase tracking-wide">Nome</label>
+                    <label className="text-sm font-bold text-white uppercase tracking-wide">Nome</label>
                     <div className="relative">
                         <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
                         <input
@@ -80,7 +80,7 @@ export function ContactForm() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                        <label className="text-sm font-bold text-slate-500 uppercase tracking-wide">E-mail</label>
+                        <label className="text-sm font-bold text-white uppercase tracking-wide">E-mail</label>
                         <div className="relative">
                             <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
                             <input
@@ -93,7 +93,7 @@ export function ContactForm() {
                     </div>
 
                     <div className="space-y-2">
-                        <label className="text-sm font-bold text-slate-500 uppercase tracking-wide">Telefone</label>
+                        <label className="text-sm font-bold text-white uppercase tracking-wide">Telefone</label>
                         <div className="relative">
                             <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
                             <input
@@ -107,7 +107,7 @@ export function ContactForm() {
                 </div>
 
                 <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-500 uppercase tracking-wide">Mensagem</label>
+                    <label className="text-sm font-bold text-white uppercase tracking-wide">Mensagem</label>
                     <div className="relative">
                         <MessageSquare className="absolute left-4 top-6 w-5 h-5 text-slate-400" />
                         <textarea
@@ -120,7 +120,7 @@ export function ContactForm() {
                     {form.formState.errors.message && <p className="text-red-500 text-sm ml-2">{form.formState.errors.message.message}</p>}
                 </div>
 
-                <Button type="submit" size="lg" className="w-full h-14 rounded-[24px] text-lg font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-shadow">
+                <Button type="submit" size="lg" className="w-full h-14 rounded-[24px] bg-[#ff9f41] text-white text-lg font-bold shadow-lg hover:bg-[#ff9f41]/90 hover:shadow-xl transition-all border-none">
                     Enviar Mensagem
                     <Send className="ml-2 w-5 h-5" />
                 </Button>

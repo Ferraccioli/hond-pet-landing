@@ -1,35 +1,52 @@
-import apple from "../../assets/apple.svg";
-import googlePlay from "../../assets/google-play.svg";
-import { useModal } from "../../context/modal-context";
 
-export function CTASection() {
-    const { openWaitlist } = useModal();
+import { motion } from "framer-motion";
+import bgImage from "../../assets/cta-background.png";
+import dogImage from "../../assets/cta-dog.png";
+import iconApple from "../../assets/cta-icon-apple.svg";
+import iconGoogle from "../../assets/cta-icon-google.svg";
+
+export function CtaSection() {
     return (
-        <section className="py-32 bg-white">
-            <div className="max-w-[896px] mx-auto px-6 text-center">
-                <h2 className="text-5xl font-heading font-semibold text-slate-900 mb-12 leading-tight">
-                    Pronto para transformar a rotina<br />
-                    do seu pet? 🐶
+        <section className="relative pt-20 pb-0 overflow-hidden bg-[#ff9f41] -mt-14 z-20 min-h-screen snap-start flex flex-col items-center justify-center">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
+                <img src={bgImage} alt="" className="w-full h-full object-cover" />
+            </div>
+
+            <div className="container mx-auto px-4 relative z-20 flex flex-col items-center justify-center text-center">
+
+                {/* Heading */}
+                <h2 className="font-heading font-semibold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-8 drop-shadow-sm">
+                    Pronto para transformar a rotina<br />do seu pet? 🐶
                 </h2>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                    <button
-                        onClick={openWaitlist}
-                        className="bg-dark text-white hover:bg-slate-800 transition-colors px-10 py-5 rounded-full flex items-center gap-4 min-w-[240px] justify-center"
-                    >
-                        <img src={apple} alt="Apple Store" className="w-6 h-6 invert brightness-0" />
-                        <span className="font-bold font-sans text-lg">App Store</span>
+                {/* Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                    <button className="bg-dark text-white font-heading font-bold px-8 py-4 rounded-full flex items-center justify-center gap-3 hover:bg-opacity-90 hover:scale-105 transition-all shadow-xl min-w-[200px]">
+                        <img src={iconApple} alt="Apple" className="w-6 h-6 flex-shrink-0" />
+                        <span className="whitespace-nowrap text-lg">App Store</span>
                     </button>
-
-                    <button
-                        onClick={openWaitlist}
-                        className="bg-primary text-white hover:bg-primary/90 transition-colors px-10 py-5 rounded-full flex items-center gap-4 min-w-[240px] justify-center shadow-lg shadow-primary/25"
-                    >
-                        <img src={googlePlay} alt="Google Play" className="w-6 h-6 brightness-0 invert" />
-                        <span className="font-bold font-sans text-lg">Google Play</span>
+                    <button className="bg-dark text-white font-heading font-bold px-8 py-4 rounded-full flex items-center justify-center gap-3 hover:bg-opacity-90 hover:scale-105 transition-all shadow-xl min-w-[200px]">
+                        <img src={iconGoogle} alt="Google Play" className="w-6 h-6 flex-shrink-0" />
+                        <span className="whitespace-nowrap text-lg">Google Play</span>
                     </button>
                 </div>
             </div>
+
+            {/* Dog Image - Growing from bottom */}
+            <motion.div
+                initial={{ y: 200, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="absolute bottom-0 left-0 right-0 w-full max-w-[1200px] mx-auto z-10 px-4 pointer-events-none"
+            >
+                <img
+                    src={dogImage}
+                    alt="Happy Dog"
+                    className="w-full h-auto object-contain mx-auto display-block"
+                />
+            </motion.div>
         </section>
     );
 }

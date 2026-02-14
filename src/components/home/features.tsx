@@ -1,73 +1,133 @@
-import { FadeIn } from "../ui/fade-in";
-import Pin from "../../assets/GPS.png";
-import Book from "../../assets/book.png";
-import Paw from "../../assets/paw.png";
+import { motion } from "framer-motion";
+import gps from "../../assets/GPS.png"; // Ensure exact casing
+import book from "../../assets/book.png";
+import paw from "../../assets/paw.png";
+import pata from "../../assets/features-pata.png";
+import ossos from "../../assets/features-ossos.png";
+import bolinhas from "../../assets/features-bolinhas.png";
 
-const features = [
-    {
-        image: Pin,
-        title: "Curadoria Georreferenciada",
-        description: "Encontre bares, restaurantes e espaços culturais próximos a você que realmente amam receber pets.",
-        delay: 0.2,
-    },
-    {
-        image: Book,
-        title: "Informação Qualificada",
-        description: "Saiba exatamente as regras: porte permitido, áreas cobertas e se o local oferece o exclusivo Pet Menu.",
-        delay: 0.4,
-    },
-    {
-        image: Paw,
-        title: "Gestão de Identidade",
-        description: "Crie perfis únicos para seus pets, guardando histórico de visitas e preferencias para experiências personalizadas.",
-        delay: 0.6,
-    },
-];
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.3,
+        }
+    }
+}
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+}
 
 export function FeaturesSection() {
     return (
-        <section className="py-32 bg-background relative">
-            <div className="max-w-[1280px] mx-auto px-6">
+        <section className="bg-background min-h-screen snap-start flex flex-col justify-center py-20 lg:py-32 relative overflow-hidden -mt-8 z-20">
+            <div className="container mx-auto px-4 relative z-10">
 
-                <div className="text-center max-w-2xl mx-auto mb-20">
-                    <FadeIn direction="up">
-                        <h2 className="text-4xl lg:text-[36px] font-heading font-semibold text-slate-900 mb-6">
-                            Tudo o que você precisa
-                        </h2>
-                        <p className="text-lg text-slate-600 font-sans leading-relaxed">
-                            Ajudamos você a planejar a saída perfeita, com segurança e sem surpresas desagradáveis.
-                        </p>
-                    </FadeIn>
+                {/* Header */}
+                <div className="text-center max-w-2xl mx-auto mb-16 relative z-20">
+                    <h2 className="font-heading font-semibold text-4xl lg:text-[40px] text-dark mb-4">
+                        Tudo o que você <span className="text-secondary">precisa</span>
+                    </h2>
+                    <p className="font-sans text-lg text-muted">
+                        Ajudamos você a planejar a saída perfeita, com segurança e sem surpresas desagradáveis.
+                    </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {features.map((feature, index) => (
-                        <FadeIn key={index} delay={feature.delay} direction="up" className="h-full">
-                            <div className="bg-white p-10 rounded-[32px] border border-slate-100 shadow-xl hover:shadow-2xl transition-shadow duration-300 h-full">
-                                <div className="w-20 h-20 flex items-center justify-center mb-8 overflow-hidden">
-                                    <img
-                                        src={feature.image}
-                                        alt={feature.title}
-                                        className="w-fit h-fit object-contain"
-                                        onError={(e) => {
-                                            // Fallback para visualização se a imagem não existir
-                                            e.currentTarget.style.display = 'none';
-                                        }}
-                                    />
-                                </div>
-                                <h3 className="text-2xl font-heading font-semibold text-slate-900 mb-4 h-16 flex items-center">
-                                    {feature.title}
-                                </h3>
-                                <p className="text-base text-slate-600 font-sans leading-relaxed">
-                                    {feature.description}
-                                </p>
-                            </div>
-                        </FadeIn>
-                    ))}
-                </div>
+                {/* Cards Grid */}
+                <motion.div
+                    className="grid grid-cols-1 lg:grid-cols-3 gap-8 relative z-20"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                >
+
+                    {/* Card 1 - Dark Blue */}
+                    <motion.div
+                        variants={cardVariants}
+                        whileHover={{ y: -5 }}
+                        className="bg-[#0a014f] border border-slate-200 p-10 rounded-[32px] shadow-xl flex flex-col gap-6 relative overflow-hidden group"
+                    >
+                        <div className="w-20 h-20 relative z-10">
+                            <img src={gps} alt="GPS Icon" className="w-full h-full object-contain" />
+                        </div>
+                        <div className="z-10 relative">
+                            <h3 className="font-heading font-semibold text-2xl text-white mb-4 leading-tight">
+                                Curadoria <br /> Georreferenciada
+                            </h3>
+                            <p className="font-sans text-white/80 text-base leading-relaxed">
+                                Encontre bares, restaurantes e espaços culturais próximos a você que realmente amam receber pets.
+                            </p>
+                        </div>
+                    </motion.div>
+
+                    {/* Card 2 - White */}
+                    <motion.div
+                        variants={cardVariants}
+                        whileHover={{ y: -5 }}
+                        className="bg-white border border-slate-200 p-10 rounded-[32px] shadow-xl flex flex-col gap-6 relative overflow-hidden group"
+                    >
+                        <div className="w-20 h-20 relative z-10">
+                            <img src={book} alt="Book Icon" className="w-full h-full object-contain" />
+                        </div>
+                        <div className="z-10 relative">
+                            <h3 className="font-heading font-semibold text-2xl text-dark mb-4 leading-tight">
+                                Informação <br /> Qualificada
+                            </h3>
+                            <p className="font-sans text-muted text-base leading-relaxed">
+                                Saiba exatamente as regras: porte permitido, áreas cobertas e se o local oferece o exclusivo Pet Menu.
+                            </p>
+                        </div>
+                    </motion.div>
+
+                    {/* Card 3 - White */}
+                    <motion.div
+                        variants={cardVariants}
+                        whileHover={{ y: -5 }}
+                        className="bg-white border border-slate-200 p-10 rounded-[32px] shadow-xl flex flex-col gap-6 relative overflow-hidden group"
+                    >
+                        <div className="w-20 h-20 relative z-10 flex items-center justify-center">
+                            <img src={paw} alt="Identity Icon" className="w-full h-full object-contain opacity-80" />
+                        </div>
+                        <div className="z-10 relative">
+                            <h3 className="font-heading font-semibold text-2xl text-dark mb-4 leading-tight">
+                                Gestão de <br /> Identidade
+                            </h3>
+                            <p className="font-sans text-muted text-base leading-relaxed">
+                                Crie perfis únicos para seus pets, guardando histórico de visitas e preferências para experiências personalizadas.
+                            </p>
+                        </div>
+                    </motion.div>
+
+                </motion.div>
 
             </div>
+
+            {/* Decorative Elements (Pata, Ossos, Bolinhas) - Absolute Background */}
+
+            {/* Pata Esquerda - Posição Baseada no Figma (aprox x=117, y=594) */}
+            <div className="absolute top-[60%] left-[-5%] lg:left-[5%] w-[154px] h-[154px] z-0 pointer-events-none opacity-80">
+                <img src={pata} alt="" className="w-full h-full object-contain" />
+            </div>
+
+            {/* Pata Direita topo - (aprox x=1747, y=123) */}
+            <div className="absolute top-[10%] right-[-5%] lg:right-[5%] w-[154px] h-[154px] z-0 pointer-events-none opacity-80 rotate-180">
+                <img src={pata} alt="" className="w-full h-full object-contain" />
+            </div>
+
+            {/* Ossos Esquerda Topo - (aprox x=194, y=152) */}
+            <div className="absolute top-[15%] left-[-2%] lg:left-[10%] w-[174px] h-[117px] z-0 pointer-events-none opacity-80">
+                <img src={ossos} alt="" className="w-full h-full object-contain" />
+            </div>
+
+            {/* Bolinhas Direita Baixo - (aprox x=1685, y=517) */}
+            <div className="absolute bottom-[10%] right-0 lg:right-[10%] w-[95px] h-[205px] z-0 pointer-events-none opacity-80">
+                <img src={bolinhas} alt="" className="w-full h-full object-contain" />
+            </div>
+
         </section>
     );
 }
-

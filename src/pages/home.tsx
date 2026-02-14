@@ -1,7 +1,7 @@
 import { Hero } from "../components/home/hero";
 import { FeaturesSection } from "../components/home/features";
 import { ExperienceSection } from "../components/home/experience";
-import { CTASection } from "../components/home/cta";
+import { CtaSection } from "../components/home/cta"; // Use correct export name CtaSection
 
 export default function HomePage() {
     return (
@@ -9,7 +9,7 @@ export default function HomePage() {
             <Hero />
             <FeaturesSection />
             <ExperienceSection />
-            <CTASection />
+            <CtaSection />
         </>
     );
 }
